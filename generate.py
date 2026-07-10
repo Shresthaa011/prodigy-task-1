@@ -25,7 +25,12 @@ def generate_text(model_path, prompt, max_length=100):
     return text
 
 if __name__ == "__main__":
+    import os
     model_path = "./results"  # Path to the fine-tuned model
+    if not os.path.exists(model_path):
+        print("Fine-tuned model not found in ./results, falling back to base 'gpt2'...")
+        model_path = "gpt2"
+        
     prompt = "To be, or not to be, that is the question:"
     
     print(f"Prompt: {prompt}\n")
