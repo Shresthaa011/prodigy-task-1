@@ -32,3 +32,7 @@ if __name__ == "__main__":
     print("Generated Text:")
     generated = generate_text(model_path, prompt)
     print(generated)
+    
+    with open("output.txt", "w", encoding="utf-8") as f:
+        f.write(f"Prompt: {prompt}\n\nGenerated Text:\n{generated}\n")
+    print("\n[The output has also been saved to output.txt]")
